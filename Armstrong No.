@@ -1,0 +1,59 @@
+#Code for Python to check if it is Armstrong number or not #2083 :
+
+def is_armstrong(num):
+    num_str = str(num)
+
+    num_digits = len(num_str)
+
+    sum=0
+
+    for digits in num_str:
+        sum+=int(digits) ** num_digits
+
+    return num==sum
+num=int(input("enter the number"))
+
+if is_armstrong(num):
+    print(num, "is armstrong number")
+else:
+    print(num, "is not a armstrong number")
+
+#Code for java to check if it is Armstrong number or not #2083 :
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+   
+    public static boolean isArmstrongNumber(int num) {
+        
+        String numStr = String.valueOf(num);
+        
+    
+        int numDigits = numStr.length();
+        
+        
+        int sumOfDigits = 0;
+        
+        for (int i = 0; i < numDigits; i++) {
+            int digit = Character.getNumericValue(numStr.charAt(i));
+            sumOfDigits += Math.pow(digit, numDigits);
+        }
+        return num == sumOfDigits;
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        
+        if (isArmstrongNumber(num)) {
+            System.out.println(num + " is an Armstrong number.");
+        } else {
+            System.out.println(num + " is not an Armstrong number.");
+        }
+        
+        scanner.close();
+    }
+}
+
+
